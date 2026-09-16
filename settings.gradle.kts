@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "offline_revda"
+rootProject.name = "revda_offline"
 include(":app")
