@@ -1,4 +1,5 @@
 [
   {"id": "welcome.md", "title": "Главная"},
-  {"id": "bus.md", "title": "Автобусы"}
+  {"id": "bus.md", "title": "Автобусы"},
+  {"id": "taxi.md", "title": "Такси"}
 ]
