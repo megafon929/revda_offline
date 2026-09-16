@@ -1,2 +1,18 @@
 # revda_offline
+
 Оффлайн справка для города Ревда. Работает даже на парковке!
+
+<div align="center">![Logo]([https://github.com/megafon929/revda_offline/blob/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp)</div>
+
+## Цель проекта
+
+Предоставить оффлайн справку:
+
+- Расписание автобусов
+- Контакты коммунальных служб
+- Контакты городских служб
+- И другие справки, которые будут доступны без интернета
+
+## Поддержка
+
+Android 5.0 - Android 17.0 
