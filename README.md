@@ -2,7 +2,7 @@
 
 Оффлайн справка для города Ревда. Работает даже на парковке!
 
-<img src="https://raw.githubusercontent.com/megafon929/revda_offline/refs/heads/main/store-listing/ic_launcher-playstore.png" alt="Get it on GitHub" align="center" height="80" /></a>
+<img src="https://raw.githubusercontent.com/megafon929/revda_offline/refs/heads/main/store-listing/ic_launcher-playstore.png" alt="Get it on GitHub" align="center"/></a>
 
 ## Цель проекта
 
