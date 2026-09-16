@@ -2,7 +2,7 @@
 
 Оффлайн справка для города Ревда. Работает даже на парковке!
 
-<div align="center">![Logo](app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp)</div>
+<div align="center"> ![Logo](app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp) </div>
 
 ## Цель проекта
 
