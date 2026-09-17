@@ -8,6 +8,4 @@
 
 ### [Такси](taxi.md)
 
-
-Для добавления ресурсов прошу писать на email: [support@m929.ru](mailto:support@m929.ru)
-
+### [О приложении](about.md)

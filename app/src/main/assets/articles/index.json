@@ -1,5 +1,8 @@
 [
   {"id": "welcome.md", "title": "Главная"},
   {"id": "bus.md", "title": "Автобусы"},
-  {"id": "taxi.md", "title": "Такси"}
+  {"id": "taxi.md", "title": "Такси"},
+  {"id": "about.md", "title": "О приложении"},
+  {"id": "license.md", "title": "Лицензия исходного кода"}
+
 ]

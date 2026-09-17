@@ -45,11 +45,13 @@
             src = src.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
                      .replace(/__(.*?)__/gim, '<strong>$1</strong>')
                      .replace(/\*(.*?)\*/gim, '<em>$1</em>')
-                     .replace(/_(.*?)_/gim, '<em>$1</em>');
-                     
+
             // Цитаты
             src = src.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>');
-            
+
+            // Горизонтальная линия
+            src = src.replace(/^\s*-{3,}\s*$/gim, '<hr>');
+
             // Ссылки
             src = src.replace(/\[([^\[]+)\]\(([^\)]+)\)/gim, '<a href="$2">$1</a>');
             
@@ -60,7 +62,10 @@
             
             // Переносы строк
             src = src.replace(/\n\n/gim, '<p></p>').replace(/\n/gim, '<br>');
-            
+
+            // Переносы строк
+            src = src.replace(/\n\n/gim, '<p></p>').replace(/\n/gim, '<br>');
+
             return src;
         }
 
