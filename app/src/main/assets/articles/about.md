@@ -6,7 +6,7 @@
 
 **E-mail поддержки:** [revda_offline@m929.ru](mailto:revda_offline@m929.ru)
 
-**Исходный код:** [https://github.com/megafon929/revda_offline](https://github.com/megafon929/revda_offline) 
+**Исходный код:** [https://github.com/megafon929/revda_offline](https://github.com/megafon929/revda_offline)
 
 ---
 
