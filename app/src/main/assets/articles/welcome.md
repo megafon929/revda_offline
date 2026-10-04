@@ -10,6 +10,6 @@
 
 <a class="btn" href="/about.md">📱 О Приложении</a>
 
-<center>Версия: 0.9 beta 29.09.2026</center>
+<center>Версия: 0.10 beta 04.10.2026</center>
 
-<center>Данные актуальны на 29.09.2026</center>
+<center>Данные актуальны на 04.10.2026</center>
