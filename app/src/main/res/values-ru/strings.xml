@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Ревда Офлайн</string>
+    <string name="send_email">Отправить письмо…</string>
+    <string name="no_mail_client">Почтовый клиент не найден</string>
+    <string name="cannot_open_link">Не удалось открыть ссылку</string>
+    <string name="page_not_found">Страница не найдена</string>
 </resources>

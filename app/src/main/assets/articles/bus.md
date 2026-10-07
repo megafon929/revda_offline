@@ -20,8 +20,6 @@
 
 <a class="btn_bus" href="/103.md">Автобус 103</a>
 
-<a class="btn_bus" href="/105.md">Автобус 104</a>
-
 <a class="btn_bus" href="/105.md">Автобус 105</a>
 
 <a class="btn_bus" href="/107.md">Автобус 107</a>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Revda Offline</string>
+    <string name="send_email">Send email…</string>
+    <string name="no_mail_client">No email app found</string>
+    <string name="cannot_open_link">Unable to open the link</string>
+    <string name="page_not_found">Page not found</string>
 </resources>
