@@ -1,4 +1,5 @@
 import java.util.Properties
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("com.android.application")
@@ -8,37 +9,36 @@ plugins {
 val keystoreProperties = Properties()
 val keystorePropertiesFile = rootProject.file("keystore.properties")
 if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(keystorePropertiesFile.inputStream())
+    keystorePropertiesFile.inputStream().use { keystoreProperties.load(it) }
 }
 
 android {
     namespace = "ru.m929.offline_revda"
-    compileSdk = 34
+    // Android 16 (API 36). Приложение совместимо вперёд и работает на Android 17.
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "ru.m929.offline_revda"
-        minSdk = 21
-        targetSdk = 34
-        versionCode = 4
-        versionName = "0.13_beta"
+        minSdk = 21 // Android 5.0
+        targetSdk = 36
+        versionCode = 5
+        versionName = "0.14_beta"
+        // Только нужные языки — меньше размер APK
+        androidResources.localeFilters += listOf("ru", "en")
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     signingConfigs {
         if (keystorePropertiesFile.exists()) {
             create("release") {
-                storeFile = file(keystoreProperties["storeFile"] as String)
-                storePassword = keystoreProperties["storePassword"] as String
-                keyAlias = keystoreProperties["keyAlias"] as String
-                keyPassword = keystoreProperties["keyPassword"] as String
+                storeFile = file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
             }
         }
     }
@@ -63,7 +63,14 @@ android {
     }
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_11)
+    }
+}
+
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.activity:activity-ktx:1.9.3")
 }
