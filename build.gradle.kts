@@ -1,8 +1,8 @@
 import java.util.Properties
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("com.android.application") version "8.2.2"
+    id("org.jetbrains.kotlin.android") version "1.9.22"
 }
 
 val keystoreProperties = Properties()
@@ -13,19 +13,22 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "ru.m929.offline_revda"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "ru.m929.offline_revda"
         minSdk = 21
         targetSdk = 34
-        versionCode = 3
-        versionName = "0.12_beta"
+        buildToolsVersion = "34.0.0"
+        versionCode = 4
+        versionName = "0.13_beta"
+        vectorDrawables.useSupportLibrary = true
     }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
@@ -64,6 +67,7 @@ android {
 }
 
 dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.12.0")
 }
