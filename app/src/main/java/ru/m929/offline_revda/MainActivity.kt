@@ -1,7 +1,6 @@
 package ru.m929.offline_revda
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
@@ -38,18 +37,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val isNight = (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) ==
-                Configuration.UI_MODE_NIGHT_YES
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             @Suppress("DEPRECATION")
-            window.statusBarColor = if (isNight) 0xFF121212.toInt() else Color.WHITE
-            WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = !isNight
+            window.statusBarColor = Color.WHITE
+            WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = true
         }
 
         webView = findViewById(R.id.webView)
-        // Фон до загрузки страницы, чтобы не было белой вспышки в тёмной теме
-        webView.setBackgroundColor(if (isNight) 0xFF121212.toInt() else 0xFFFAFAFA.toInt())
         webView.settings.javaScriptEnabled = true
         webView.settings.allowFileAccess = true
         webView.settings.cacheMode = WebSettings.LOAD_NO_CACHE

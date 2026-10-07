@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light dark">
     <style>
-        html { background-color: #FAFAFA; }
         body {
             font-family: Roboto, sans-serif;
             font-size: 16px;
@@ -25,28 +23,14 @@
         th, td { border: 1px solid #DDD; padding: 8px; text-align: left; }
         th { background-color: #F2F2F2; }
         hr { margin: 0; border: none; border-top: 1px solid #E0E0E0; }
-        .btn { display: block; width: auto; font-weight: 500; padding: 12px; margin-top: 4px; border-radius: 12px; text-align: center; text-decoration: none; color: black; border: 2px solid #969696; }
-        .btn_bus { display: block; width: auto; font-weight: 500; padding: 12px; margin-top: 4px; border-radius: 12px; text-align: center; text-decoration: none; background: blue; color: white; }
-
-        @media (prefers-color-scheme: dark) {
-            html { background-color: #121212; }
-            body { color: #E0E0E0; background-color: #121212; }
-            h1, h2, h3 { border-bottom-color: #3A3A3A; }
-            a { color: #8AB4F8; }
-            code { background: #2A2A2A; }
-            blockquote { border-left-color: #8AB4F8; color: #B0B0B0; }
-            th, td { border-color: #444; }
-            th { background-color: #232323; }
-            hr { border-top-color: #3A3A3A; }
-            .btn { color: #F0F0F0; border-color: #6A6A6A; }
-            .btn_bus { background: #2F5BD6; color: white; }
-        }
+       .btn { display: block; width: auto; font-weight: 500; padding: 12px; margin-top: 4px; border-radius: 12px; text-align: center; text-decoration: none; color: black; border: 2px solid #969696; }
+       .btn_bus { display: block; width: auto; font-weight: 500; padding: 12px; margin-top: 4px; border-radius: 12px; text-align: center; text-decoration: none; background: blue; color: white}
     </style>
 </head>
 <body>
-<div id="content">Загрузка...</div>
+    <div id="content">Загрузка...</div>
 
-<script>
+    <script>
     /**
      * Marked v4.3.0 - Встроенная легкая версия библиотеки (оффлайн)
      */
@@ -60,25 +44,24 @@
                      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
                      .replace(/^# (.*$)/gim, '<h1>$1</h1>');
 
-            // Горизонтальная линия
-            src = src.replace(/^[ \t]*-{3,}[ \t]*$/gm, '<hr>');
-
-            // Неупорядоченные списки (до выделений, чтобы "* пункт" не принимался за курсив)
-            src = src.replace(/^[ \t]*[\-\*][ \t]+(.*)$/gm, '<li>$1</li>');
-            src = src.replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>');
-            src = src.replace(/<\/ul>\s*<ul>/g, '');
-
-            // Выделения (жирный курсив, жирный, курсив)
-            src = src.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
-                     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-                     .replace(/(^|[^\w])__(.+?)__(?!\w)/g, '$1<strong>$2</strong>')
-                     .replace(/\*(.+?)\*/g, '<em>$1</em>');
+            // Выделения (жирный, курсив)
+            src = src.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+                     .replace(/__(.*?)__/gim, '<strong>$1</strong>')
+                     .replace(/\*(.*?)\*/gim, '<em>$1</em>')
 
             // Цитаты
-            src = src.replace(/^> (.*$)/gm, '<blockquote>$1</blockquote>');
+            src = src.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>');
+
+            // Горизонтальная линия
+            src = src.replace(/^\s*-{3,}\s*$/gim, '<hr>');
 
             // Ссылки
-            src = src.replace(/\[([^\[\]]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>');
+            src = src.replace(/\[([^\[]+)\]\(([^\)]+)\)/gim, '<a href="$2">$1</a>');
+
+            // Неупорядоченные списки
+            src = src.replace(/^\s*[\-\*]\s+(.*)$/gim, '<li>$1</li>');
+            src = src.replace(/(<li>.*<\/li>)/gim, '<ul>$1</ul>');
+            src = src.replace(/<\/ul>\s*<ul>/gim, '');
 
             // Переносы строк
             src = src.replace(/\n\n/gim, '<p></p>').replace(/\n/gim, '<br>');
@@ -108,6 +91,6 @@
             document.getElementById('content').innerHTML = "<p style='color:red;'>Ошибка рендеринга: " + err.message + "</p>";
         }
     }
-</script>
+    </script>
 </body>
 </html>

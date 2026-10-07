@@ -13,14 +13,14 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "ru.m929.offline_revda"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "ru.m929.offline_revda"
         minSdk = 21
         targetSdk = 34
-        versionCode = 3
-        versionName = "0.12_beta"
+        versionCode = 4
+        versionName = "0.13_beta"
     }
 
     compileOptions {
